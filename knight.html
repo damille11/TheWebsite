@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <style type="text/css">
+      html{font-family:Copperplate;}
+      body{background:#4d4d4d;margin:0n kc}
+      h1{font-size: 2.5em;-webkit-text-stroke: 2px black;padding:20px;margin=10;
+      color: #FFFFFF;
+      }
+    </style>
+    <title>The Knight</title>
+    <style type="text/css">
+      .hidden {
+        display : none;
+      }
+      img {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        -webkit-filter: drop-shadow(5px 10px 5px #222);
+        
+        width: 10%;
+        height: 10%;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      document.getElementById('visible').style.display = 'block';
+      function display(){
+        var elem = document.getElementById('selecter');
+        var selection = elem.options[elem.selectedIndex].value;
+        document.getElementById('level1').style.display = 'none';
+        document.getElementById('level11').style.display = 'none';
+        switch (selection) {
+          case "1":
+            document.getElementById('level1').style.display = 'block';
+            break;
+          case "2":
+            document.getElementById('level11').style.display = 'block';
+            break;
+        }
+      }
+    </script>
+    <h1 align="center">Knight</h1>
+    <p style="text-align:center;">
+      The Knight is a medium unit perfect for dealing with ground range enemies and acting as a distraction.
+    </p>
+    <img src="knightpic.png" alt="Knight">
+    <form action="/action_page.php" method="get" target="_blank">
+    <div align="center">
+      <select id="selecter" onchange="display()">
+      <option selected>Level Selection</option>
+      <option value="1">1</option>
+      <option value="2">11</option>
+  </select>
+      <br><br><br><br><br><br>
+      <div class="hidden" id="level1">
+        HP : 651
+        <br>
+        Damage Per Second : 65
+        <br>
+        Range : 1.2
+      </div>
+      <div class="hidden" id="level11">
+        HP : 1,666
+        <br>
+        Damage Per Second : 168
+        <br>
+        Range : 1.2
+      </div>
+    </div>
+    </form>
+  </body>
+</html>
