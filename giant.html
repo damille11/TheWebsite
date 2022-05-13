@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <style type="text/css">
+      html{font-family:Copperplate;}
+      body{background:#4d4d4d;margin:0n kc}
+      h1{font-size: 2.5em;-webkit-text-stroke: 2px black;padding:20px;margin=10;
+      color: #FFFFFF;
+      }
+    </style>
+    <title>The Giant</title>
+    <style type="text/css">
+      .hidden {
+        display : none;
+      }
+      img {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        -webkit-filter: drop-shadow(5px 10px 5px #222);
+        
+        width: 20%;
+        height: 20%;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      document.getElementById('visible').style.display = 'block';
+      function display(){
+        var elem = document.getElementById('selecter');
+        var selection = elem.options[elem.selectedIndex].value;
+        document.getElementById('level1').style.display = 'none';
+        document.getElementById('level11').style.display = 'none';
+        document.getElementById('level14').style.display = 'none';
+        switch (selection) {
+          case "1":
+            document.getElementById('level1').style.display = 'block';
+            break;
+          case "2":
+            document.getElementById('level11').style.display = 'block';
+            break;
+          case "3":
+            document.getElementById('level14').style.display = 'block';
+            break;
+        }
+      }
+    </script>
+    <h1 align="center">Giant</h1>
+    <p style="text-align:center;">
+      The Giant is a slow unit that targets buildings and deals high damage.
+    </p>
+    <img src="giantpic.png" alt="Giant">
+    <form action="/action_page.php" method="get" target="_blank">
+    <div align="center">
+      <select id="selecter" onchange="display()">
+      <option selected>Level Selection</option>
+      <option value="1">3</option>
+      <option value="2">11</option>
+      <option value="3">14</option>
+  </select>
+      <br><br><br><br><br><br>
+      <div class="hidden" id="level1">
+        HP : 1,930
+        <br>
+        Damage Per Second : 80
+        <br>
+        Range : Medium
+      </div>
+      <div class="hidden" id="level11">
+        HP : 4,091
+        <br>
+        Damage Per Second : 169
+        <br>
+        Range : Medium
+      </div>
+      <div class="hidden" id="level14">
+        HP : 5,423
+        <br>
+        Damage Per Second : 224
+        <br>
+        Range : Medium
+      </div>
+    </div>
+    </form>
+  </body>
+</html>

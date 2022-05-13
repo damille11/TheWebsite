@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <style type="text/css">
+      html{font-family:Copperplate;}
+      body{background:#4d4d4d;margin:0n kc}
+      h1{font-size: 2.5em;-webkit-text-stroke: 2px black;padding:20px;margin=10;
+      color: #FFFFFF;
+      }
+    </style>
+    <title>The Archer</title>
+    <style type="text/css">
+      .hidden {
+        display : none;
+      }
+      img {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        -webkit-filter: drop-shadow(5px 10px 5px #222);
+        
+        width: 20%;
+        height: 20%;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      document.getElementById('visible').style.display = 'block';
+      function display(){
+        var elem = document.getElementById('selecter');
+        var selection = elem.options[elem.selectedIndex].value;
+        document.getElementById('level1').style.display = 'none';
+        document.getElementById('level11').style.display = 'none';
+        document.getElementById('level14').style.display = 'none';
+        switch (selection) {
+          case "1":
+            document.getElementById('level1').style.display = 'block';
+            break;
+          case "2":
+            document.getElementById('level11').style.display = 'block';
+            break;
+          case "3":
+            document.getElementById('level14').style.display = 'block';
+            break;
+        }
+      }
+    </script>
+    <h1 align="center">Archer</h1>
+    <p style="text-align:center;">
+      The Archer is a ranged unit that serves as an air killer and a ranged damage stacker.
+    </p>
+    <img src="archerpic.png" alt="Archer">
+    <form action="/action_page.php" method="get" target="_blank">
+    <div align="center">
+      <select id="selecter" onchange="display()">
+      <option selected>Level Selection</option>
+      <option value="1">1</option>
+      <option value="2">11</option>
+      <option value="3">14</option>
+  </select>
+      <br><br><br><br><br><br>
+      <div class="hidden" id="level1">
+        HP : 119
+        <br>
+        Damage Per Second : 38
+        <br>
+        Range : 5
+      </div>
+      <div class="hidden" id="level11">
+        HP : 304
+        <br>
+        Damage Per Second : 97
+        <br>
+        Range : 5
+      </div>
+      <div class="hidden" id="level14">
+        HP : 403
+        <br>
+        Damage Per Second : 129
+        <br>
+        Range : 5
+      </div>
+    </div>
+    </form>
+  </body>
+</html>
